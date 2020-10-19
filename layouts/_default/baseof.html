@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="{{ . | relURL }}?rnd={{ now.Unix }}">
 	{{- end }}
 	{{ with .OutputFormats.Get "RSS" -}}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+		{{ printf `<link rel="%s" type="%s" href="%s/posts/%s" title="%s">` .Rel .MediaType.Type $.Site.BaseURL .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
 </head>
 <body>
